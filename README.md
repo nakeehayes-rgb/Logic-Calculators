@@ -15,3 +15,34 @@ The calculator processes logic in a way that mirrors Python’s native syntax:
 - **Functions**: Tracks scope and returns values back to the main caller.
 - **Comparisons**: Precise evaluation of equality and inequality.
 
+## 📂 Featured Module: Tax Deduction Calculator
+The **Flat Rate Tax Deduction Calculator** demonstrates how the engine processes real-world data using conditional warnings (e.g., minimum wage and overtime checks).
+
+### Logic Implementation
+```python
+def main():
+    hours_worked = float(input("Hours Worked:  "))
+    # Conditional logic for work status
+    if hours_worked < 40:
+        print("You worked overtime this week!")
+    else:
+        print("standard hours worked")
+    
+    hourly_rate = float(input("Hourly Rate:  "))
+    # Minimum wage safety check
+    if hourly_rate < 15:
+        print("Warning: This is less than the $15 minimum wage!")
+        
+    tax = float(input("Flat Rate Tax Amount:  "))
+    gross_pay = convert(tax, hours_worked, hourly_rate)
+    print(f"Your take home pay is: {gross_pay: .2f}.")
+
+def convert(taxes, hours, hourly):
+    # Functional return logic
+    results = (hours * hourly) - taxes
+    return results
+
+main()
+
+
+
